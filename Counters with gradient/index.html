@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Counters</title>
+
+    <link href="css/style.css" rel="stylesheet" type="text/css" /> 
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery-3.2.0.js"></script>
+
+</head>
+<body>
+
+	
+<div class="container">
+    <div class="row">
+        
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter-colum counter-first">
+    <h3 id="counter-header" style="text-align:center;">Sent sailors</h3>
+    <span id="counter-value-first" class="value">2334</span>
+    <div class="circles">
+        <div class="first circle">
+          <div id="counter-label-first"></div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter-colum counter-second">
+    <h3 id="counter-header" style="text-align:center;">Number of shipowners</h3>
+      <span id="counter-value-second" class="value">8</span>
+    <div class="circles">
+        <div class="second circle">
+          <div id="counter-label-second">
+            
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter-colum counter-third">
+    <h3 id="counter-header" style="text-align:center;">Number of months on ships</h3>
+      <span id="counter-value-third" class="value">84</span>
+    <div class="circles">
+        <div class="third circle">
+          <div id="counter-label-third">
+            
+          </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12 counter-colum counter-fourth">
+    <h3 id="counter-header" style="text-align:center;">Come back to us</h3>
+      <span id="counter-value-fourth" class="value">98</span>
+    <div class="circles">
+        <div class="fourth circle">
+          <div id="counter-label-fourth">
+            
+          </div>
+        </div>
+    </div>
+    </div>
+
+    </div>
+</div>
+
+    <script src="js/circle-progress.js"></script>
+    
+    <script>
+    function come(elem) {
+      var docViewTop = jQuery(window).scrollTop(),
+        docViewBottom = docViewTop + jQuery(window).height(),
+        elemTop = jQuery(elem).offset().top,
+        elemBottom = elemTop + jQuery(elem).height();
+
+      return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
+  
+    //jQuery(document).scroll(function(){   //при прокручивании страницы, отобразить счетчики в момент появления их на экране
+
+        if (come("#counter-header")) {
+
+            jQuery(document).unbind('scroll');
+            var speed = 2300;
+
+            /* Counter 1 */
+            var value1 = document.getElementById ('counter-value-first').textContent;
+            jQuery('.first.circle').circleProgress({
+                value: 1,
+                startAngle: -Math.PI + 1.65,
+                    size: 170,
+                thickness: 6,
+                fill: {
+                    color: 'rgba(87, 108, 156, 0.5)', // fallback color when image is not loaded
+                    image: 'src/gradient.png'
+                },
+                animation: {
+                  duration: speed,
+                },
+            }).on('circle-animation-progress', function(event, progress) {
+                jQuery(this).find('#counter-label-first').html(parseInt(value1 * progress));
+            });
+
+            /* Counter 2 */
+            var value2 = document.getElementById ('counter-value-second').textContent;
+            jQuery('.second.circle').circleProgress({
+                value: 1,
+                startAngle: -Math.PI + 1.65,
+                    size: 170,
+                thickness: 6,
+                fill: {
+                    color: 'rgba(87, 108, 156, 0.5)', // fallback color when image is not loaded
+                    image: 'src/gradient.png'
+                },
+                animation: {
+                  duration: speed,
+                },
+            }).on('circle-animation-progress', function(event, progress) {
+                jQuery(this).find('#counter-label-second').html(parseInt(value2 * progress));
+            });
+
+            /* Counter 3 */
+            var value3 = document.getElementById ('counter-value-third').textContent;
+            jQuery('.third.circle').circleProgress({
+                value: 1,
+                startAngle: -Math.PI + 1.65,
+                    size: 170,
+                thickness: 6,
+                fill: {
+                    color: 'rgba(87, 108, 156, 0.5)', // fallback color when image is not loaded
+                    image: 'src/gradient.png'
+                },
+                animation: {
+                  duration: speed,
+                },
+            }).on('circle-animation-progress', function(event, progress) {
+                jQuery(this).find('#counter-label-third').html(parseInt(value3 * progress));
+            });
+
+            /* Counter 4 */
+            var value4 = document.getElementById ('counter-value-fourth').textContent;
+            jQuery('.fourth.circle').circleProgress({
+                value: 1,
+                startAngle: -Math.PI + 1.65,
+                    size: 170,
+                thickness: 6,
+                fill: {
+                    color: 'rgba(87, 108, 156, 0.5)', // fallback color when image is not loaded
+                    image: 'src/gradient.png'
+                },
+                animation: {
+                  duration: speed,
+                },
+            }).on('circle-animation-progress', function(event, progress) {
+                jQuery(this).find('#counter-label-fourth').html(parseInt(value4 * progress));
+            });
+        }
+    //});
+    </script>
+
+
+</body>
+</html>

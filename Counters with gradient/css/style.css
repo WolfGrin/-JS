@@ -1,0 +1,44 @@
+.counter-main {
+	margin: 5px 0 30px 0;
+}
+
+.counter-main-one-line h3 {
+	margin-bottom: 36px;
+}
+
+.circle {
+  margin-bottom: 35px;
+}
+
+.counter-colum span.value {
+  display: none;
+}
+
+#counter-label-first,
+#counter-label-second,
+#counter-label-third,
+#counter-label-fourth {
+    line-height: 100%;
+    color: #fd8c00;
+    border-radius: 99%;
+    width: 89%;
+    font-size: 40px;
+    position: absolute;
+    text-align: center;
+    top: 54%;
+}
+
+#counter-header {
+  margin-top: 30px;
+}
+
+.counter-first #counter-header,
+.counter-second #counter-header,
+.counter-fourth #counter-header {
+  margin-top: 57px;
+}
+
+.counter-colum canvas {
+  margin: 0 auto;
+  display: block;
+}
